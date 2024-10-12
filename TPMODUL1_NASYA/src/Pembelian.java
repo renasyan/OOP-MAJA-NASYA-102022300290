@@ -8,15 +8,20 @@ public static Penerbangan pilihanPenerbangan;
 
 
     public static void detailTiket(String nik, String firstName, String lastName){
-        System.out.println("\n====== Detail Tiket Penerbangan ======");
-        Penumpang penumpang = new Penumpang(nik, firstName, lastName);
-        penumpang.tampilDaftarPenumpang();
-        pilihanPenerbangan.tampilDaftarPenerbangan();
+        if (pilihanPenerbangan != null) {
+            System.out.println("\n====== Detail Tiket Penerbangan ======");
+            Penumpang penumpang = new Penumpang(nik, firstName, lastName);
+            penumpang.tampilDaftarPenumpang();
+            pilihanPenerbangan.tampilDaftarPenerbangan();
+        } else{
+            System.out.println("Mohon pilih penerbangan terlebih dahulu");
+        }
         // System.out.println("");
         // tes.tampilDaftarPenumpang();
     }
 
     public static void beliTiket(){
+        pilihanPenerbangan = null;
         Scanner scanner = new Scanner(System.in);
         int idx = 1;
 
@@ -42,11 +47,14 @@ public static Penerbangan pilihanPenerbangan;
                 // System.out.println(data.getNomorPenerbangan());
                 // data.tampilDaftarPenumpang();
                 pilihanPenerbangan = data;
-
             }
             idx++;
-        }        
-        // return dataPenumpang;
+        }       
+        
+        if (pilihanPenerbangan == null) {
+                // System.out.println(pilihanPenerbangan);
+                System.out.println("Pilihan penerbangan tidak tersedia");
+        }
 
     }
 
@@ -96,7 +104,7 @@ public static Penerbangan pilihanPenerbangan;
                     System.out.println("Terima kasih.");
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Menu tidak tersedia.");
             }
             
         } while (chooseMenu != 4);
