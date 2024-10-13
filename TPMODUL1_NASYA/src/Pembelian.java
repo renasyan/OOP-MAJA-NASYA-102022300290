@@ -3,15 +3,13 @@ import java.util.Scanner;
 
 public class Pembelian {
 
-public static String nik, firstName, lastName, tes;
 public static Penerbangan pilihanPenerbangan;
 
 
-    public static void detailTiket(String nik, String firstName, String lastName){
+    public static void detailTiket(){
         if (pilihanPenerbangan != null) {
             System.out.println("\n====== Detail Tiket Penerbangan ======");
-            Penumpang penumpang = new Penumpang(nik, firstName, lastName);
-            penumpang.tampilDaftarPenumpang();
+            Penumpang.tampilDaftarPenumpang();
             pilihanPenerbangan.tampilDaftarPenerbangan();
         } else{
             System.out.println("Mohon pilih penerbangan terlebih dahulu");
@@ -27,13 +25,13 @@ public static Penerbangan pilihanPenerbangan;
 
         System.out.println("\nSilahkan masukan data diri anda");
         System.out.print("NIK  : ");
-        nik = scanner.nextLine();
+        Penumpang.setNIK(scanner.nextLine());
 
         System.out.print("Nama Depan  : ");
-        firstName = scanner.nextLine();
+        Penumpang.setNamaDepan(scanner.nextLine());
 
         System.out.print("Nama Belakang  : ");
-        lastName = scanner.nextLine();
+        Penumpang.setNamaBelakang(scanner.nextLine());
 
         System.out.println("\nTerima kasih telah mengisi data pelanggan. SIlahkan pilih tiket penerbangan yang tersedia.");
         System.out.println("\n------------------------------------------------------------------------------------------");
@@ -98,7 +96,7 @@ public static Penerbangan pilihanPenerbangan;
                     beliTiket();
                     break;
                 case 3:
-                    detailTiket(nik, firstName,lastName);
+                    detailTiket();
                     break;
                 case 4:
                     System.out.println("Terima kasih.");
