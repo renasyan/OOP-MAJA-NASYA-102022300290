@@ -21,8 +21,9 @@ public class ManajemenInventaris {
         int jumlah = sc.nextInt();
         System.out.print("Masukkan Harga makanan    : ");
         double harga = sc.nextDouble();
+        sc.nextLine();
         System.out.print("Masukkan brand makanan    : ");
-        String brand = sc.next();
+        String brand = sc.nextLine();
   
         // Todo : Create a new object for MakananKering
         daftarMakananKering.add(new MakananKering(nama, brand, jumlah, harga));
@@ -41,8 +42,9 @@ public class ManajemenInventaris {
         int jumlah = sc.nextInt();
         System.out.print("Masukkan Harga makanan    : ");
         double harga = sc.nextDouble();
+        sc.nextLine();
         System.out.print("Masukkan bahan makanan    : ");
-        String bahan = sc.next();
+        String bahan = sc.nextLine();
         // Todo : Create a new object for MakananBasah
         daftarMakananBasah.add(new MakananBasah(nama, bahan, jumlah, harga));
         // Todo :Create Print Notifitaction "Makanan Basah berhasil ditambahkan"
