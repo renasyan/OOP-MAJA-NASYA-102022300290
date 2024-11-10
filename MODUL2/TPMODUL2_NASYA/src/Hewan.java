@@ -1,6 +1,6 @@
 public class Hewan {
-    private String nama;
-    private int umur;
+    protected String nama;
+    protected int umur;
     
     public Hewan(){
 
