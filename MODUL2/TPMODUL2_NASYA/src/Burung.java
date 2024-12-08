@@ -31,4 +31,6 @@ public class Burung extends Hewan {
         System.out.println("Bulu : " + warnaBulu);
     }
 
+    
+
 }
