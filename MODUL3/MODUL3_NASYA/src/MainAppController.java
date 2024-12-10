@@ -115,7 +115,7 @@ public class MainAppController {
                 
             }
             for (Task i : taskList){
-                if(i.getTitle().equals(Title)){
+                if(i.getTitle().equals(selected.getTitle())){
                     taskList.remove(i);
                     break;
                 }
